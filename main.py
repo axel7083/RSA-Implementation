@@ -1,5 +1,5 @@
-from Utils import *
-from RSA import RSA
+from scripts.Utils import *
+from scripts.RSA import RSA
 
 
 def bob_actions(private_bob, public_alice):

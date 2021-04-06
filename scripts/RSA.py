@@ -1,6 +1,6 @@
-from Utils import *
-from RSAPrivateKey import RSAPrivateKey
-from RSAPublicKey import RSAPublicKey
+from scripts.Utils import *
+from scripts.RSAPrivateKey import RSAPrivateKey
+from scripts.RSAPublicKey import RSAPublicKey
 
 
 class RSA:

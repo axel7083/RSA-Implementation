@@ -1,4 +1,4 @@
-from Utils import *
+from scripts.Utils import *
 
 
 class RSAPrivateKey:
@@ -10,7 +10,7 @@ class RSAPrivateKey:
 
     # Decode using PRIVATE key
     def decode(self, val):
-        print("Decoding using PRIVATE key " + str(len(val)))
+        print("Decoding using PRIVATE key ")
         output = []
 
         for i in range(0, len(val), self.blocCount):
@@ -19,7 +19,7 @@ class RSAPrivateKey:
                 bloc.append(val[j])
 
             bloc_val = int.from_bytes(bloc, byteorder='big')
-            print("[" + str(i) + "] " + str(bloc_val))
+            # print("[" + str(i) + "] " + str(bloc_val))
             output.append(home_mod_exponent(bloc_val, self.d, self.n))
 
         return bytearray(output).decode()

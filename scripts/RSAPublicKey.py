@@ -1,4 +1,4 @@
-from Utils import *
+from scripts.Utils import *
 
 
 class RSAPublicKey:

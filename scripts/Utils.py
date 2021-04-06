@@ -2,9 +2,9 @@ import hashlib
 import binascii
 
 
-def home_pgcd(a,b): #recherche du pgcd
+def home_pgcd(a, b): #recherche du pgcd
     if a == 0:
-        return (b, 0, 1)
+        return b, 0, 1
     g, y, x = home_pgcd(b % a, a)
     return g, x - (b // a) * y, y
 
@@ -12,7 +12,7 @@ def home_pgcd(a,b): #recherche du pgcd
 def home_ext_euclid(a, m):
     g, x, y = home_pgcd(a, m)
     if g != 1:
-        raise Exception('No modular inverse')
+        return -1
     return x % m
 
 
