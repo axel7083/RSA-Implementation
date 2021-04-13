@@ -35,20 +35,25 @@ def home_int_to_string(x):
     return txt
 
 
-def home_mod_exponent(x, p, n):
+def home_mod_exponent(base, exponent, modulus):
     """
+    This function is using bit operator to be optimized and memory efficient
+    Source/Pseudo code: https://en.wikipedia.org/wiki/Modular_exponentiation#Right-to-left_binary_method
     :return: y = x^p mod n
     """
+    if modulus == 1:
+        return 0
+
     result = 1
-    while p > 0:
-        if p & 1 > 0:
-            result = (result*x) % n
-        p >>= 1
-        x = (x*x) % n
+    while exponent > 0:
+        if exponent & 1 > 0:
+            result = (result * base) % modulus
+        exponent >>= 1
+        base = (base * base) % modulus
     return result
 
 
-def get_block_count(n):
+def get_block_size(n):
     """
     This function allow us to count the number of byte needed to store n
 
@@ -64,7 +69,7 @@ def get_block_count(n):
 
 # Generate signature using PRIVATE key
 def generate_signature(val, mode="sha256"):
-    hashlib.sha256()
+
     if mode == "sha256":
         signature = hashlib.sha256(val.encode()).digest()
     elif mode == "md5":

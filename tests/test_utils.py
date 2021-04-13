@@ -17,7 +17,6 @@ def mod_inverse(x, m):
     for n in range(m):
         if (x * n) % m == 1:
             return n
-            break
         elif n == m - 1:
             return -1
         else:

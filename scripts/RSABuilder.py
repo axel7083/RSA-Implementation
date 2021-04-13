@@ -3,7 +3,7 @@ from scripts.RSAPrivateKey import RSAPrivateKey
 from scripts.RSAPublicKey import RSAPublicKey
 
 
-class RSA:
+class RSABuilder:
 
     def __init__(self, p, q, e):
         self.p = p  # must be prime
